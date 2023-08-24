@@ -3,7 +3,7 @@
 ##### Change these values ###
 ZONE_ID="Z0815271YX4AOIGSNRSQ"
 DOMAIN="devopsroboshop.online"
-SG_NAME="allow-all"
+SG_NAME="launch-wizard-1"
 env=dev
 #############################
 

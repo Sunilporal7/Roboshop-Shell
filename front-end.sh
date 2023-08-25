@@ -21,4 +21,5 @@ unzip /tmp/frontend.zip
 
 echo -e "\e[copy nginx config file\e[0m"
 cp ${script_location}/files/nginx-roboshop.conf /etc/nginx/default.d/roboshop.conf
+
 systemctl restart nginx

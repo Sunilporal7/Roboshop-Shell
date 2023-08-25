@@ -16,7 +16,7 @@ echo -e "\e[35m remove nginx old file\e[0m"
 curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
 cd /usr/share/nginx/html
 
-echo -e "\e[unzip frontend\e[0m"
+echo -e "\e[35m unzip frontend\e[0m"
 unzip /tmp/frontend.zip
 
 echo -e "\e[copy nginx config file\e[0m"

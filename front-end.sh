@@ -13,7 +13,7 @@ systemctl start nginx &>>${LOG}
 echo -e "\e[35m remove nginx old file\e[0m"
 rm -rf /usr/share/nginx/html/* &>>${LOG}
 
-echo -e "\e[35m remove nginx old file\e[0m"
+echo -e "\e[35m copy nginx old file\e[0m"
 curl -o /tmp/frontend.zip https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
 
 cd /usr/share/nginx/html &>>${LOG}

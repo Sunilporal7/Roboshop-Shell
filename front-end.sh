@@ -1,9 +1,10 @@
 source common.sh
-echo -e "\e[35m install nginx\e[0m"
+
+print_head "configure NodeJs Repo"
 yum install nginx -y &>>${LOG}
 status_check
 
-echo -e "\e[35m enable nginx\e[0m"
+print_head "Enabling Nginx"
 systemctl enable nginx &>>${LOG}
 status_check
 

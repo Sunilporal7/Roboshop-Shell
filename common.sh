@@ -9,3 +9,7 @@ else
   echo -e "\e[31m FAILURE\e[0m"
   fi
   }
+
+print_head () {
+  echo -e "\e[1m \e[0m"
+}

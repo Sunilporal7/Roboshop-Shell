@@ -1,13 +1,13 @@
 source common.sh
-echo -e "\e[35m configuring Nodejs repos\e[0m"
+print_head "configuring Nodejs repos"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${LOG}
 status_check
 
-echo -e "\e[35m install Nodejs repos\e[0m"
+print_head "install Nodejs repos"
 yum install nodejs -y &>>${LOG}
 status_check
 
-echo -e "\e[35m Add application user\e[0m"
+print_head "Add application user"
 useradd roboshop &>>${LOG}
 status_check
 

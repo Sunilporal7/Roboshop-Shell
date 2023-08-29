@@ -69,7 +69,7 @@ print_head "Start ${component}"
 systemctl start ${component} &>>${LOG}
 status_check
 
-if [ ${schema_load} == 'true']; then
+if [ ${schema_load} == 'true' ]; then
 print_head "Configure mongo repo"
 cp ${script_location}/files/mongodb.repo /etc/yum.repos.d/mongodb.repo &>>${LOG}
 status_check

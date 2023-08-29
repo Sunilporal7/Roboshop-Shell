@@ -18,5 +18,5 @@ status_check
 systemctl enable Redis &>>${LOG}
 status_check
 
-systemctl start Redis &>>${LOG}
+systemctl restart Redis &>>${LOG}
 status_check

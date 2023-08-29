@@ -69,6 +69,7 @@ print_head "Start ${component}"
 systemctl start ${component} &>>${LOG}
 status_check
 
+if [ ${schema_load} == 'true']; then
 print_head "Configure mongo repo"
 cp ${script_location}/files/mongodb.repo /etc/yum.repos.d/mongodb.repo &>>${LOG}
 status_check
@@ -80,4 +81,5 @@ status_check
 print_head "load schema"
 mongo --host mongodb-dev.devopsroboshop.online </app/schema/${component}.js &>>${LOG}
 status_check
+fi
 }

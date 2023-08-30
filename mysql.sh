@@ -1,13 +1,12 @@
 source common.sh
 
-if [ -z "${root_mysql_password}" ];
- then
+if [ -z "${root_mysql_password}" ];then
   echo "variable root_mysql_password is missing"
   exit
   fi
 
 print_head "Disable mysql default version"
-yum module disable mysql -y
+yum module disable mysql -y &>>${LOG}
 status_check
 
 print_head "mysql repo file"

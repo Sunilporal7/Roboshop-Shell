@@ -61,7 +61,7 @@ print_head "Demon reload"
 systemctl daemon-reload &>>${LOG}
 status_check
 
-print_head "Eanable ${component}"
+print_head "Enable ${component}"
 systemctl enable ${component} &>>${LOG}
 status_check
 

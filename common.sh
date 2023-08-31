@@ -32,7 +32,7 @@ app_prereq(){
   curl -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>${LOG}
   status_check
 
-  print_head "cleanup old content "
+  print_head "cleanup old content"
   rm -rf /app/* &>>${LOG}
   status_check
 
@@ -62,36 +62,36 @@ systemd_setup(){
 }
 
 load_schema(){
- if [ ${schema_load} == "true" ]
- then
-   if [ ${schema_type} == "mongo" ]
+   if [ ${schema_load} == "true" ]
    then
-  print_head "Configure mongo repo"
-  cp ${script_location}/files/mongodb.repo /etc/yum.repos.d/mongodb.repo &>>${LOG}
-  status_check
-
-  print_head "Install mongo client"
-  yum install mongodb-org-shell -y &>>${LOG}
-  status_check
-
-  print_head "load schema"
-  mongo --host mongodb-dev.devopsroboshop.online </app/schema/${component}.js &>>${LOG}
-  status_check
-  fi
- fi
-
- load_schema(){
-  if [ ${schema_load} == "mysql" ]
-  then
-    print_head "install mysql server"
-    yum install mysql -y &>>${LOG}
+     if [ ${schema_type} == "mongo" ]
+     then
+    print_head "Configure mongo repo"
+    cp ${script_location}/files/mongodb.repo /etc/yum.repos.d/mongodb.repo &>>${LOG}
     status_check
 
-     print_head "load schema"
-        mysql -h mysql-dev.devopsroboshop.online -uroot -p${root_mysql_password} < /app/schema/shipping.sql  &>>${LOG}
-        status_check
-        }
-        }
+    print_head "Install mongo client"
+    yum install mongodb-org-shell -y &>>${LOG}
+    status_check
+
+    print_head "load schema"
+    mongo --host mongodb-dev.devopsroboshop.online </app/schema/${component}.js &>>${LOG}
+    status_check
+    fi
+   fi
+
+   load_schema(){
+    if [ ${schema_load} == "mysql" ]
+    then
+      print_head "install mysql server"
+      yum install mysql -y &>>${LOG}
+      status_check
+
+       print_head "load schema"
+          mysql -h mysql-dev.devopsroboshop.online -uroot -p${root_mysql_password} < /app/schema/shipping.sql  &>>${LOG}
+          status_check
+          }
+}
 
 Nodejs(){
 print_head "configuring Nodejs repos"

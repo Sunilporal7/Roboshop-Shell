@@ -3,7 +3,7 @@ source common.sh
 if [ -z "${roboshop_rabbitmq_password}"  ]; then
   echo "variable roboshop_rabbitmq_password is missing"
   exit
-  if
+fi
 
 print_head "configuring erlang yum repos"
 curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | bash &>>${LOG}

@@ -90,8 +90,9 @@ load_schema(){
      print_head "load schema"
         mysql -h mysql-dev.devopsroboshop.online -uroot -p${root_mysql_password} < /app/schema/shipping.sql  &>>${LOG}
         status_check
+        }
+        }
 
-}
 Nodejs(){
 print_head "configuring Nodejs repos"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${LOG}

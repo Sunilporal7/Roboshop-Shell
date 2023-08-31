@@ -32,5 +32,3 @@ status_check
 print_head "add permission to user"
 rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*" &>>${LOG}
 status_check
-
-

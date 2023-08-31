@@ -150,6 +150,7 @@ app_prereq
 
  print_head "update password in service file"
  sed -i -e "s/roboshop_rabbitmq_password/${roboshop_rabbitmq_password}" ${script_location}/files/${component}.service &>>${LOG}
+
  status_check
  systemd_setup
 }

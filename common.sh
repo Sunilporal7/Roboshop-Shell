@@ -78,21 +78,19 @@ load_schema(){
     mongo --host mongodb-dev.devopsroboshop.online </app/schema/${component}.js &>>${LOG}
     status_check
     fi
-   fi
-
-   load_schema(){
-    if [ ${schema_load} == "mysql" ]
-    then
-      print_head "install mysql server"
-      yum install mysql -y &>>${LOG}
-      status_check
-
-       print_head "load schema"
-          mysql -h mysql-dev.devopsroboshop.online -uroot -p${root_mysql_password} < /app/schema/shipping.sql  &>>${LOG}
+      if [ ${schema_type} == "mysql" ]
+        then
+          print_head "install mysql server"
+          yum install mysql -y &>>${LOG}
           status_check
-          }
-}
 
+           print_head "load schema"
+              mysql -h mysql-dev.devopsroboshop.online -uroot -p${root_mysql_password} < /app/schema/shipping.sql  &>>${LOG}
+              status_check
+     fi
+    fi
+
+}
 Nodejs(){
 print_head "configuring Nodejs repos"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${LOG}
@@ -111,6 +109,7 @@ status_check
 
 systemd_setup
 
+load_schema
 
 }
 

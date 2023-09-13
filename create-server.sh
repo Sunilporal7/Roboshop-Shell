@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ##### Change these values ###
-ZONE_ID="Z0815271YX4AOIGSNRSQ"
+ZONE_ID="Z04666871ZCZFU978EU0N"
 DOMAIN="devopsroboshop.online"
 SG_NAME="launch-wizard-1"
 env=dev
